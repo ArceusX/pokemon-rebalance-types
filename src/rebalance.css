@@ -1,0 +1,264 @@
+html {
+    font-size: 15px;
+    font-family: "Helvetica", "Arial Narrow", sans-serif;
+    line-height: 1.5;
+    color: #404040;
+}
+
+#title {
+    text-align: center;
+    font-style: italic;
+    color: #F8D030;
+}
+
+#type-rebalance-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#type-rebalance-app > * {
+    margin-bottom: 25px;
+}
+
+#btn-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+#btn-container > button {
+    font-size: 14px;
+    letter-spacing: .75px;
+    padding: 10px;
+    width: 100px;
+    margin: auto 80px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#diff-label {
+    padding: 10px;
+    font-size: 16px;
+    letter-spacing: 1px; 
+    background-color: #F85888;
+    color: white;
+}
+
+/* Input to handleUpload, but is "covered" by button */
+#file-upload {
+    display: none;
+}
+
+table {
+    /* No double border shared among rows*/
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+table th, table td {
+    border: 1px solid #ECECEC;
+    font-weight: normal;
+    padding: 0;
+}
+
+#type-chart-body {
+    cursor: pointer;
+}
+
+/* Headings (ATTACK, DEFENCE, TYPE, STAT) */
+.tiny-text {
+    font-size: 9px;
+}
+
+/* Icon containing type name. Wrapped by <th> */
+th a {
+    display: inline-block;
+    text-decoration: none;
+    background: #CCCCCC;
+    width: 32px;
+    border: 1px solid #AAAAAA;
+    border-radius: 2px;
+    color: #FFFFFF;
+    font-size: 10px;
+    height: 32px;   /* If line-height == height, align text vertically*/
+    line-height: 32px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #333333;
+    text-transform: uppercase;
+}
+
+/* Full-sized (ie ATK type, stat type) header */
+.icon-fu {
+    background: #BBBBBB;
+    border: 1px solid #AAAAAA;
+    border-radius: 2px;
+    color: #FFFFFF;
+    font-size: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #333333;
+    text-transform: uppercase;
+    height: 32px;
+    line-height: 32px;
+    width: 54px;
+}
+
+.icon-fu:first-child {
+    margin-left: 0;
+}
+
+/* For eg <td id="Ice → Ice" class=".dmg-per-50">½</td>*/
+[class^='dmg-perc-'] {
+    color: #DDDD66;
+    font-size: 13px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    width: 32px;
+}
+
+/* Beige color on types that are balanced in ATK, DEF stats*/
+.dmg-perc-N {
+    background-color: #FFFDD0;
+}
+
+/* Color-code each dmg % (100% gets white default) */
+.dmg-perc-0 {
+    background-color: #556164;
+}
+
+.dmg-perc-50 {
+    background-color: #d80101;
+    font-size: 16px;    /* To magnify ½ */
+}
+
+.dmg-perc-200 {
+    background-color: #55ad02;
+}
+
+/* Enlargen text in stat cells */
+[id^='ATK'], [id^='DEF'], [id^='TOTAL'] {
+    font-size: 15px;
+}
+
+[id$="std-dev"] {
+    background: none; 
+    font-weight: bold;
+    color: blue;
+}
+
+/* Use each type's color in 3 places: as ATK type, DEF type, stat header */
+[class^="type-"] {
+    border: 1px solid;
+}
+.type-normal {
+    background-color: #aa9;
+    border-color: #aa9;
+}
+
+.type-fire, .type-total {
+    background-color: #f42;
+    border-color: #f42;
+}
+
+.type-water {
+    background-color: #39f;
+    border-color: #39f;
+}
+
+.type-electric {
+    background-color: #fc3;
+    border-color: #fc3;
+}
+
+.type-grass {
+    background-color: #7c5;
+    border-color: #7c5;
+}
+
+.type-ice, .type-atk {
+    background-color: #6cf;
+    border-color: #6cf;
+}
+
+.type-fighting {
+    background-color: #b54;
+    border-color: #b54;
+}
+
+.type-poison {
+    background-color: #a59;
+    border-color: #a59;
+}
+
+.type-ground {
+    background-color: #db5;
+    border-color: #db5;
+}
+
+.type-flying {
+    background-color: #89f;
+    border-color: #89f;
+}
+
+.type-psychic {
+    background-color: #f59;
+    border-color: #f59;
+}
+
+.type-bug {
+    background-color: #ab2;
+    border-color: #ab2;
+}
+
+.type-rock {
+    background-color: #ba6;
+    border-color: #ba6;
+}
+
+.type-ghost {
+    background-color: #66b;
+    border-color: #66b;
+}
+
+.type-dragon, .type-std-dev {
+    background-color: #76e;
+    border-color: #76e;
+}
+
+.type-dark {
+    background-color: #754;
+    border-color: #754;
+}
+
+.type-steel, .type-def {
+    background-color: #aab;
+    border-color: #aab;
+}
+
+.type-fairy {
+    background-color: #e9e;
+    border-color: #e9e;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 384px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: "Helvetica", "Arial Narrow", sans-serif;
+    font-size: 18px;
+    color: rgb(167, 62, 171);
+    font-weight: bold;
+    font-style: italic;
+    border: 1.5px solid red;
+}
+
+footer p {
+    margin: 10px;
+}
