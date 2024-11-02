@@ -28,7 +28,7 @@ const TypeTh = ({variant, type, title, onDoubleClick }) => {
             className={`icon-fu type-${type.toLowerCase()}`}
             title={title}
             onDoubleClick={onDoubleClick}
-            href="#" >
+            href="/" >
             {type.toUpperCase()}
           </a>
         </th>
@@ -39,7 +39,7 @@ const TypeTh = ({variant, type, title, onDoubleClick }) => {
           <a className={`type-${type.toLowerCase()}`}
             title={title}
             onDoubleClick={onDoubleClick}
-            href="#" >
+            href="/" >
             {type.slice(0, 3).toUpperCase()}
           </a>
         </th>
