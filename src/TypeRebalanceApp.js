@@ -235,7 +235,7 @@ const TypeRebalanceApp = ({ srcTypeDamage }) => {
         TdUpdate={updateTypeDamage} ThOnDoubleClick={clearRow}/>
     <TypeDiffCount text="Changes : " diffCount={diffCount} />
     <TypeStatsTable stats={stats} typeDamage = {typeDamage}/>
-    <Footer author="Triet Lieu" link="https://github.com/ArceusX/pokemon-type-rebalance" />
+    <Footer author="Triet Lieu" link="https://github.com/ArceusX/pokemon-rebalance-types" />
   </div>
 )
 };
