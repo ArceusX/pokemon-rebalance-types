@@ -18,6 +18,6 @@ Grass is the worst type in Pokémon. Steel has too many resistances. And Dragon 
 - Try your best to minimize the values for "TOTAL STD DEV" and "CHANGES"
 
 - [Go To HTML File](https://arceusx.github.io/pokemon-rebalance-types/rebalance.html)
-- [Go To React-Hosted Page](https://whimsical-klepon-3cf1c6.netlify.app/)
+- [Go To React-Hosted Page](https://6725ca78f6aa7400091fc421--pokemon-rebalance-types.netlify.app/)
 
 # ![demo2](https://github.com/ArceusX/pokemon-rebalance-types/blob/main/demo2.PNG)
