@@ -81,10 +81,10 @@ const TypeRebalanceApp = ({ srcTypeDamage }) => {
   }
 
   const getDiffCountChange = (rowIndex, colIndex, newValue) => {
-    const srcValue = srcTypeDamage.values[colIndex];
+    const srcValue = srcTypeDamage[rowIndex].values[colIndex];
     const oldValue = typeDamage[rowIndex].values[colIndex];
-    const wasChanged = (srcValue !== oldValue);
-    const isChanged  = (srcValue !== newValue);
+    const wasChanged = (srcValue !== oldValue) ? 1 : 0;
+    const isChanged  = (srcValue !== newValue) ? 1 : 0;
     return isChanged - wasChanged;
   }
 
@@ -185,7 +185,7 @@ const TypeRebalanceApp = ({ srcTypeDamage }) => {
     setTypeDamage(newDamage);
   };
 
-  // Called by onDoubleClick of TypeTh that names column: TODO
+  // Called by onDoubleClick of TypeTh that names column
   const clearColumn = (colIndex) => {
       updateColumnStats(colIndex);
 
@@ -235,7 +235,7 @@ const TypeRebalanceApp = ({ srcTypeDamage }) => {
     document.body.removeChild(link);
   };
 
-  // Put uploaded data into typeDamage and display
+  // Put uploaded data into typeDamage and show
   const handleUpload = (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -280,8 +280,8 @@ const TypeRebalanceApp = ({ srcTypeDamage }) => {
     </div>
 
     <TypeChart typeDamage = {typeDamage}
-        TdUpdate={updateTypeDamage} rowDBClick={clearRow} colDBClick={clearColumn} />
-    <TypeDiffCount text="Changes : " diffCount={diffCount} />
+        tdUpdate={updateTypeDamage} rowDBClick={clearRow} colDBClick={clearColumn} />
+    <TypeDiffCount text="Changes : " title="Against official type chart" diffCount={diffCount} />
     <TypeStatsTable stats={stats} typeDamage = {typeDamage}/>
     <Footer author="Triet Lieu" link="https://github.com/ArceusX/pokemon-rebalance-types" />
   </div>

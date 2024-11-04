@@ -1,9 +1,9 @@
 import React from 'react';
 
-// key(-table, -stats)  variants return preset content
+// key(-table, -stats) variants return preset content
 // For type="Fire", variant= ...
-// icon-fu: <th><div class="icon-fu type-fire">Fire</div></th>
-// default: <th><div class="type-fire">Fir</div></th>
+// icon-fu: <div class="icon-fu type-fire">Fire</div>
+// default: <div class="type-fire">Fir</div>
 
 const TypeTh = ({variant, type, index, title, onDoubleClick }) => {
   switch (variant) {

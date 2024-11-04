@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TypeDiffCount = ({text, diffCount}) => {
+const TypeDiffCount = ({text, title, diffCount}) => {
     return (
-        <label id="diff-label" title="Against official type chart">
+        <label id="diff-label" title={title}>
             {text}
             <span id="diff-show">{diffCount}</span>
         </label>

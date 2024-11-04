@@ -2,7 +2,10 @@ import React from 'react';
 import TypeTh from './TypeTh';
 import TypeTd from './TypeTd';
 
-const TypeChart = ({ typeDamage, TdUpdate, rowDBClick, colDBClick }) => (
+// Pass typeDamage reference to TypeTh, TypeTd it creates
+// Pass tdUpdate to allow changing one cell of typeDamage
+// Pass rowDBClick to TypeTh row head, rowDBClick to TypeTh col head 
+const TypeChart = ({ typeDamage, tdUpdate, rowDBClick, colDBClick }) => (
   <table id="type-chart">
   <thead>
     <tr id="type-chart-head">
@@ -29,7 +32,7 @@ const TypeChart = ({ typeDamage, TdUpdate, rowDBClick, colDBClick }) => (
             typeDamage={typeDamage}
             rowIndex={rowIndex}
             colIndex={colIndex}
-            update={TdUpdate}
+            update={tdUpdate}
           />
         ))}
       </tr>

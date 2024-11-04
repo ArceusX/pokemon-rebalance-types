@@ -2,6 +2,8 @@ import React from 'react';
 import TypeTh from './TypeTh';
 import TypeTdStat from './TypeTdStat';
 
+// Pass stats reference to TypeTh and TypeTdStat it creates
+// Its children components do not write data
 const TypeStatsTable = ({ stats, typeDamage }) => (
   <table id="stats-table">
     <thead>
