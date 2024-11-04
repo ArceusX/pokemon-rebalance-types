@@ -2,10 +2,10 @@ import React from 'react';
 
 // key(-table, -stats)  variants return preset content
 // For type="Fire", variant= ...
-// icon-fu: <th><a class="icon-fu type-fire">Fire</a></th>
-// default: <th><a class="type-fire">Fir</a></th>
+// icon-fu: <th><div class="icon-fu type-fire">Fire</div></th>
+// default: <th><div class="type-fire">Fir</div></th>
 
-const TypeTh = ({variant, type, title, onDoubleClick }) => {
+const TypeTh = ({variant, type, index, title, onDoubleClick }) => {
   switch (variant) {
     case 'key-table':
       return (
@@ -23,25 +23,25 @@ const TypeTh = ({variant, type, title, onDoubleClick }) => {
       );
     case 'icon-fu':
       return (
-        <th onDoubleClick={onDoubleClick}>
-          <a
+        <th>
+          <div
             className={`icon-fu type-${type.toLowerCase()}`}
             title={title}
-            onDoubleClick={onDoubleClick}
-            href="/" >
+            onDoubleClick={() => onDoubleClick(index)}
+          >
             {type.toUpperCase()}
-          </a>
+          </div>
         </th>
       );
     default:
       return (
         <th>
-          <a className={`type-${type.toLowerCase()}`}
+          <div className={`type-${type.toLowerCase()}`}
             title={title}
-            onDoubleClick={onDoubleClick}
-            href="/" >
+            onDoubleClick={() => onDoubleClick(index)}
+          >
             {type.slice(0, 3).toUpperCase()}
-          </a>
+          </div>
         </th>
       );
   }

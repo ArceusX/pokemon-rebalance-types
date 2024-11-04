@@ -8,7 +8,8 @@ const TypeStatsTable = ({ stats, typeDamage }) => (
       <tr id="stats-head">
         <TypeTh variant="key-stats" />
         {typeDamage.map((row, index) => (
-            <TypeTh key={index} variant="icon-fu" type={row.type} />
+            <TypeTh key={index}
+                variant="icon-fu" index = {index} type={row.type} />
         ))}
         <TypeTh key="std-dev" variant="icon-fu"
             type="std-dev" title="Lower is better" />     

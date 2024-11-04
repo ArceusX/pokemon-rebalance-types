@@ -2,23 +2,26 @@ import React from 'react';
 import TypeTh from './TypeTh';
 import TypeTd from './TypeTd';
 
-const TypeChart = ({ typeDamage, TdUpdate, ThOnDoubleClick }) => (
+const TypeChart = ({ typeDamage, TdUpdate, rowDBClick, colDBClick }) => (
   <table id="type-chart">
   <thead>
     <tr id="type-chart-head">
       <TypeTh variant="key-table" />
-      {typeDamage.map((row, index) => (
-        <TypeTh key={index} type={row.type} />
+      {typeDamage.map((row, rowIndex) => (
+        <TypeTh key={rowIndex} index={rowIndex}
+          type={row.type}
+          title="Double-click to clear column"
+          onDoubleClick={colDBClick} />
       ))}
     </tr>
   </thead>
   <tbody id="type-chart-body">
     {typeDamage.map((row, rowIndex) => (
       <tr key={rowIndex} id={row.type}>
-        <TypeTh
-          type={row.type} variant="icon-fu"
+        <TypeTh index={rowIndex}
+          variant="icon-fu" type={row.type}
           title="Double-click to clear row"
-          onDoubleClick={() => ThOnDoubleClick(rowIndex)}
+          onDoubleClick={rowDBClick}
         />
         {row.values.map((_, colIndex) => (
           <TypeTd

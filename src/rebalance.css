@@ -66,19 +66,18 @@ table th, table td {
     padding: 0;
 }
 
-#type-chart-body {
+#type-chart {
     cursor: pointer;
 }
 
 /* Headings (ATTACK, DEFENCE, TYPE, STAT) */
 .tiny-text {
     font-size: 9px;
+    cursor: default;
 }
 
 /* Icon containing type name. Wrapped by <th> */
-th a {
-    display: inline-block;
-    text-decoration: none;
+th div {
     background: #CCCCCC;
     width: 32px;
     border: 1px solid #AAAAAA;

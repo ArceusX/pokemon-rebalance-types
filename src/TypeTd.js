@@ -32,7 +32,7 @@ const TypeTd = ({ typeDamage, rowIndex, colIndex, update }) => {
   };
 
   const handleClick = () => {
-    update(rowIndex, colIndex, getNextValue(value))
+    update(rowIndex, colIndex, getNextValue(value));
   }
 
   return (
