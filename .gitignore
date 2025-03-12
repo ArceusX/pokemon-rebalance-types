@@ -11,6 +11,9 @@ typechart.csv
 # production
 /build
 
+# Folder containing png used for gif
+/gif
+
 # misc
 .DS_Store
 .env.local
