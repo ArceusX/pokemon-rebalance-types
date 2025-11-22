@@ -2,6 +2,8 @@ import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = ({ data }) => {
+  const iconSize = data.meta.iconSize ?? 36;
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -97,14 +99,14 @@ const Footer = ({ data }) => {
         }
 
         .scroll-to-top-icon {
-          border: ${Math.max(2, data.meta.iconSize * 0.05)}px solid currentColor;
+          border: ${Math.max(2, iconSize * 0.05)}px solid currentColor;
           border-radius: 50%;
-          padding: ${data.meta.iconSize * 0.15}px;
+          padding: ${iconSize * 0.15}px;
           display: flex;
           align-items: center;
           justify-content: center;
-          width: ${data.meta.iconSize}px;
-          height: ${data.meta.iconSize}px;
+          width: ${iconSize}px;
+          height: ${iconSize}px;
         }
 
         .scroll-to-top-icon svg {
@@ -148,18 +150,18 @@ const Footer = ({ data }) => {
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <FaGithub size={36} />
+                <FaGithub size={iconSize} />
               </a>
             )}
-            {data.personal.linked && (
+            {data.personal.linkedin && (
               <a
                 className="footer-icon-button footer-icon-button-blue"
-                href={data.personal.linked}
+                href={data.personal.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin size={36} />
+                <FaLinkedin size={iconSize} />
               </a>
             )}
             <button
@@ -169,10 +171,10 @@ const Footer = ({ data }) => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: `${data.meta.iconSize}px`,
-                height: `${data.meta.iconSize}px`,
-                padding: `${data.meta.iconSize * 0.15}px`,
-                border: `${Math.max(2, data.meta.iconSize * 0.05)}px solid #EF4444`,
+                width: `${iconSize}px`,
+                height: `${iconSize}px`,
+                padding: `${iconSize * 0.15}px`,
+                border: `${Math.max(2, iconSize * 0.05)}px solid #EF4444`,
                 borderRadius: '50%',
                 background: 'transparent',
                 color: '#EF4444',

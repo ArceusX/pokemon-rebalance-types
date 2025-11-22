@@ -10,7 +10,7 @@ const appConfig = {
   personal: {
     author: "Triet Lieu",
     email: "trielieu@gmail.com",
-    github: "https://github.com/ArceusX/git-sage",
+    github: "https://github.com/ArceusX/pokemon-rebalance-types",
   },
 };
 

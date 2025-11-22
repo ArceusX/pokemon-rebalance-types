@@ -1,10 +1,16 @@
 import React from 'react';
-import { TypeTh, TypeTd, } from "./";
+import { TypeTh, TypeTd } from "./";
+import useTypeDamageStore from './utils/useTypeDamageStore.js';
 
 // Pass typeDamage reference to TypeTh, TypeTd it creates
 // Pass tdUpdate to allow changing one cell of typeDamage
 // Pass rowDBClick to TypeTh row head, rowDBClick to TypeTh col head 
-const TypeChart = React.memo(({ typeDamage, tdUpdate, rowDBClick, colDBClick }) => {
+
+const TypeChart = React.memo(() => {
+  const typeDamage = useTypeDamageStore((state) => state.typeDamage);
+  const clearRow = useTypeDamageStore((state) => state.clearRow);
+  const clearColumn = useTypeDamageStore((state) => state.clearColumn);
+
   return (
     <table id="type-chart">
       <thead>
@@ -16,7 +22,7 @@ const TypeChart = React.memo(({ typeDamage, tdUpdate, rowDBClick, colDBClick }) 
               index={rowIndex}
               type={row.type}
               title="Double-click to clear column"
-              onDoubleClick={colDBClick} />
+              onDoubleClick={clearColumn} />
           ))}
         </tr>
       </thead>
@@ -28,15 +34,13 @@ const TypeChart = React.memo(({ typeDamage, tdUpdate, rowDBClick, colDBClick }) 
               variant="icon-fu" 
               type={row.type}
               title="Double-click to clear row"
-              onDoubleClick={rowDBClick}
+              onDoubleClick={clearRow}
             />
             {row.values.map((_, colIndex) => (
               <TypeTd
                 key={`${rowIndex}-${colIndex}`}
-                typeDamage={typeDamage}
                 rowIndex={rowIndex}
                 colIndex={colIndex}
-                update={tdUpdate}
               />
             ))}
           </tr>

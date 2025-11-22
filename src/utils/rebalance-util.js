@@ -1,6 +1,5 @@
 import {FX_SCORES} from "./TypeData.js"
 
-
 const STD = (array) => {
   const n = array.length;
   if (n === 0) return 0;
@@ -42,8 +41,9 @@ const calcStats = (typeDamage) => {
 };
 
 const getNextValue = (currentValue) => {
-  const cycle = { '0': '½', '½': '', '': '2', '2': '0' };
-  return cycle[currentValue] || currentValue;
+  const values = ['0', '½', '', '2', ];
+  const currentIndex = values.indexOf(currentValue);
+  return values[(currentIndex + 1) % values.length];
 };
 
 export { STD, getFXness, calcStats, getNextValue };
